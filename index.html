@@ -220,18 +220,32 @@
           </div>
         </div>
 
-        <div class="project-card" data-repo="CampusRenovation">
+        <div class="project-card">
           <div class="project-card-header">
             <i class="fa-solid fa-route project-icon"></i>
             <div class="project-links">
-              <a href="https://github.com/anthonyn5600/CampusRenovation" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://github.com/anthonyn5600/campus-renovation" target="_blank" rel="noopener" aria-label="GitHub" data-v="v2"><i class="fa-brands fa-github"></i></a>
+              <a href="https://github.com/anthonyn5600/CampusRenovation" target="_blank" rel="noopener" aria-label="GitHub" data-v="v1" hidden><i class="fa-brands fa-github"></i></a>
             </div>
           </div>
+          <div class="version-toggle">
+            <button class="version-btn active" data-v="v2">v2</button>
+            <button class="version-btn" data-v="v1">v1</button>
+          </div>
           <h3>Campus Navigation</h3>
-          <p>Interactive campus map that finds the shortest path between buildings, pulls in live events via scraping, and shows nearby food spots. Built with Leaflet.</p>
-          <span class="project-date"></span>
-          <div class="project-tags">
-            <span>JavaScript</span><span>Leaflet.js</span><span>Web Scraping</span><span>Routing</span>
+          <div class="version-content active" data-v="v2" data-repo="campus-renovation">
+            <p>Ground-up rebuild of the original. Interactive map with 63 buildings, live CSUF events feed, food and contact directories. No API keys, no scraping.</p>
+            <span class="project-date"></span>
+            <div class="project-tags">
+              <span>TypeScript</span><span>Next.js</span><span>React</span><span>Leaflet</span><span>Tailwind</span>
+            </div>
+          </div>
+          <div class="version-content" data-v="v1" data-repo="CampusRenovation">
+            <p>Interactive campus map that finds the shortest path between buildings, pulls in live events via scraping, and shows nearby food spots. Built with Leaflet.</p>
+            <span class="project-date"></span>
+            <div class="project-tags">
+              <span>JavaScript</span><span>Leaflet.js</span><span>Web Scraping</span><span>Routing</span>
+            </div>
           </div>
         </div>
 
