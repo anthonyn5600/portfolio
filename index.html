@@ -189,7 +189,7 @@
       <h2 class="section-heading">Projects</h2>
       <div class="projects-grid">
 
-        <div class="project-card">
+        <div class="project-card" data-repo="audio-speaker-separation">
           <div class="project-card-header">
             <i class="fa-solid fa-microphone-lines project-icon"></i>
             <div class="project-links">
@@ -198,12 +198,13 @@
           </div>
           <h3>Audio Speaker Separation</h3>
           <p>Upload an audio file with multiple people talking, and this Django app uses WhisperX to split it by speaker. Each person gets their own track and transcript.</p>
+          <span class="project-date"></span>
           <div class="project-tags">
             <span>Python</span><span>Django</span><span>WhisperX</span><span>PyTorch</span><span>Docker</span>
           </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-repo="sushi-restaurant">
           <div class="project-card-header">
             <i class="fa-solid fa-fish project-icon"></i>
             <div class="project-links">
@@ -213,12 +214,13 @@
           </div>
           <h3>Sushi Restaurant Game</h3>
           <p>A browser game where you run a sushi prep station. Customers show up, you drag ingredients to build their orders, and try not to mess up. It's harder than it sounds.</p>
+          <span class="project-date"></span>
           <div class="project-tags">
             <span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>Drag &amp; Drop API</span>
           </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-repo="CampusRenovation">
           <div class="project-card-header">
             <i class="fa-solid fa-route project-icon"></i>
             <div class="project-links">
@@ -227,12 +229,13 @@
           </div>
           <h3>Campus Navigation</h3>
           <p>Interactive campus map that finds the shortest path between buildings, pulls in live events via scraping, and shows nearby food spots. Built with Leaflet.</p>
+          <span class="project-date"></span>
           <div class="project-tags">
             <span>JavaScript</span><span>Leaflet.js</span><span>Web Scraping</span><span>Routing</span>
           </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-repo="Image-Searcher">
           <div class="project-card-header">
             <i class="fa-solid fa-images project-icon"></i>
             <div class="project-links">
@@ -241,12 +244,13 @@
           </div>
           <h3>Image Searcher</h3>
           <p>Desktop app that hooks into the Flickr API. Type in what you're looking for and it pulls up images in a GUI built with PySimpleGUI.</p>
+          <span class="project-date"></span>
           <div class="project-tags">
             <span>Python</span><span>PySimpleGUI</span><span>Flickr API</span><span>Pillow</span>
           </div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-repo="Godot-Project">
           <div class="project-card-header">
             <i class="fa-solid fa-gamepad project-icon"></i>
             <div class="project-links">
@@ -255,6 +259,7 @@
           </div>
           <h3>Dragon Ball Z Game</h3>
           <p>2D action game in Godot. Move around, throw beam attacks, deal with collision and physics. Made this because I wanted to try game dev and DBZ seemed like the right fit.</p>
+          <span class="project-date"></span>
           <div class="project-tags">
             <span>GDScript</span><span>Godot Engine</span><span>2D Physics</span><span>Animation</span>
           </div>
@@ -264,13 +269,28 @@
           <div class="project-card-header">
             <i class="fa-solid fa-music project-icon"></i>
             <div class="project-links">
-              <a href="https://github.com/anthonyn5600/Virtual-Piano" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://github.com/anthonyn5600/Virtual-Piano-V2" target="_blank" rel="noopener" aria-label="GitHub" data-v="v2"><i class="fa-brands fa-github"></i></a>
+              <a href="https://github.com/anthonyn5600/Virtual-Piano" target="_blank" rel="noopener" aria-label="GitHub" data-v="v1" hidden><i class="fa-brands fa-github"></i></a>
             </div>
           </div>
+          <div class="version-toggle">
+            <button class="version-btn active" data-v="v2">v2</button>
+            <button class="version-btn" data-v="v1">v1</button>
+          </div>
           <h3>Virtual Piano</h3>
-          <p>Press keys on your keyboard, hear piano notes. Simple idea, fun C++ problem. Had to figure out real-time audio output and key mapping.</p>
-          <div class="project-tags">
-            <span>C++</span><span>CMake</span><span>Audio I/O</span><span>Windows</span>
+          <div class="version-content active" data-v="v2" data-repo="Virtual-Piano-V2">
+            <p>Complete rewrite of the original. Real-time SoundFont synthesis, 128-voice polyphony, smooth key animations, and a modern dark UI. Built with SFML 3 and C++17.</p>
+            <span class="project-date"></span>
+            <div class="project-tags">
+              <span>C++17</span><span>CMake</span><span>SFML 3</span><span>TinySoundFont</span>
+            </div>
+          </div>
+          <div class="version-content" data-v="v1" data-repo="Virtual-Piano">
+            <p>Press keys on your keyboard, hear piano notes. Simple idea, fun C++ problem. Had to figure out real-time audio output and key mapping.</p>
+            <span class="project-date"></span>
+            <div class="project-tags">
+              <span>C++</span><span>CMake</span><span>Audio I/O</span><span>Windows</span>
+            </div>
           </div>
         </div>
 

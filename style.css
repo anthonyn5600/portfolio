@@ -135,7 +135,7 @@ a:hover { color: var(--white); }
 
 .landing-name {
   font-size: clamp(40px, 8vw, 72px); font-weight: 800;
-  line-height: 1.1; margin-bottom: 8px;
+  line-height: 1.15; margin-bottom: 8px; padding-block: 0.05em;
   background: linear-gradient(135deg, var(--white) 0%, var(--accent) 50%, var(--accent2) 100%);
   background-size: 200% 200%;
   -webkit-background-clip: text;
@@ -372,6 +372,50 @@ a:hover { color: var(--white); }
   font-family: var(--mono); font-size: 12px; color: var(--text-dim);
 }
 .project-tags span::before { content: '#'; color: var(--accent); margin-right: 2px; }
+
+.project-date {
+  display: block; font-family: var(--mono); font-size: 11px;
+  color: var(--text-dim); margin-bottom: 14px; opacity: 0.7;
+}
+
+/* Version toggle */
+.version-toggle { display: flex; gap: 4px; margin-bottom: 12px; }
+.version-btn {
+  background: transparent; border: 1px solid var(--border);
+  color: var(--text-dim); font-family: var(--mono); font-size: 12px;
+  padding: 2px 12px; border-radius: 4px; cursor: pointer; transition: all 0.2s;
+}
+.version-btn.active {
+  background: rgba(100, 255, 218, 0.1);
+  border-color: var(--accent); color: var(--accent);
+}
+.version-btn:hover:not(.active) {
+  border-color: rgba(100, 255, 218, 0.3); color: var(--text);
+}
+.version-content { display: none; flex-direction: column; flex: 1; }
+.version-content.active { display: flex; }
+.version-content p { flex: 1; }
+
+/* Recently updated highlight */
+.project-card.recently-updated {
+  border-color: rgba(100, 255, 218, 0.12);
+  animation: recentGlow 3s ease-in-out infinite alternate;
+}
+@keyframes recentGlow {
+  from {
+    box-shadow: 0 0 12px rgba(100, 255, 218, 0.04);
+    border-color: rgba(100, 255, 218, 0.08);
+  }
+  to {
+    box-shadow: 0 0 24px rgba(100, 255, 218, 0.12), 0 0 48px rgba(100, 255, 218, 0.04);
+    border-color: rgba(100, 255, 218, 0.22);
+  }
+}
+.project-card.recently-updated:hover {
+  animation: none;
+  border-color: rgba(100, 255, 218, 0.15);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
 
 /* ── Contact ── */
 .contact-container { text-align: center; max-width: 600px; }
