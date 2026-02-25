@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anthony Ngon | Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="grain"></div>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#landing" class="logo">AN<span class="accent">.</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button id="menu-toggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <div id="mobile-menu" class="mobile-menu hidden">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- Hero -->
+  <section id="landing">
+    <div class="landing-bg-grid"></div>
+    <div class="landing-content">
+      <p class="landing-greeting">Hey, I'm</p>
+      <h1 class="landing-name">Anthony Ngon</h1>
+      <h2 class="landing-title">Software Engineer</h2>
+      <p class="landing-subtitle">Ex-data engineer. 3 years at <strong>Optum</strong> building pipelines and shipping dashboards. Now I build full-stack apps, AI tools, and games. Basically whatever sounds fun.</p>
+      <div class="landing-cta">
+        <a href="#projects" class="btn btn-primary">See what I've built</a>
+        <a href="#contact" class="btn btn-outline">Let's talk</a>
+      </div>
+      <div class="landing-socials">
+        <a href="https://github.com/anthonyn5600" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="mailto:anthonyn5600@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="mouse"><div class="wheel"></div></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-heading">About Me</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>After finishing my CS degree at Cal State Fullerton, I spent 3 years at <strong>Optum</strong> writing Python and SQL every day, building ETL pipelines, automating data workflows, and putting together dashboards that marketing teams actually relied on.</p>
+          <p>Somewhere along the way I realized I wanted to build the products themselves, not just the data behind them. So I started making things on my own: a Django app that splits audio by speaker using AI, a sushi restaurant browser game, a campus map with pathfinding. Turns out I really like this.</p>
+          <p><strong>B.S. in Computer Science</strong> from CSUF. <strong>DP-900 Azure</strong> certified.</p>
+        </div>
+        <div class="about-card">
+          <div class="terminal">
+            <div class="terminal-header">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <span class="terminal-title">anthony.json</span>
+            </div>
+            <pre class="terminal-body"><code>{
+  <span class="key">"name"</span>: <span class="str">"Anthony Ngon"</span>,
+  <span class="key">"title"</span>: <span class="str">"software engineer"</span>,
+  <span class="key">"previously"</span>: <span class="str">"data eng @ optum"</span>,
+  <span class="key">"stack"</span>: [
+    <span class="str">"python"</span>, <span class="str">"js"</span>,
+    <span class="str">"c++"</span>, <span class="str">"django"</span>,
+    <span class="str">"azure"</span>
+  ],
+  <span class="key">"status"</span>: <span class="str">"open to work"</span>
+}<span class="cursor">_</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="section section-alt">
+    <div class="container">
+      <h2 class="section-heading">Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3>Data Engineer</h3>
+                <p class="company">Optum <span class="separator">/</span> UnitedHealth Group</p>
+              </div>
+              <span class="date">Jul 2022 – Jun 2025</span>
+            </div>
+            <ul class="timeline-list">
+              <li>Wrote <strong>Python</strong> + <strong>SQL</strong> pipelines that processed hundreds of Medicare claims daily, replacing what used to be a manual process</li>
+              <li>Built <strong>Tableau</strong> and <strong>Databricks</strong> dashboards the marketing team checked every morning to track campaign numbers</li>
+              <li>Created a shared <strong>Python utility library</strong> that 3 other teams ended up adopting</li>
+              <li>Set up <strong>Azure Data Factory</strong> pipelines with built-in validation so data delivered itself across channels</li>
+              <li>Worked with engineers and analysts to figure out what data was actually needed before building anything</li>
+              <li>Became the go-to person for new hires, handled onboarding and kept things running when the team grew</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>Python</span><span>SQL</span><span>Azure Data Factory</span><span>Databricks</span><span>Tableau</span><span>Spark</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2 class="section-heading">Skills & Tools</h2>
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+          <h3>Languages</h3>
+          <div class="skill-tags">
+            <span>Python</span><span>Scala</span><span>Java</span><span>C++</span><span>JavaScript</span><span>HTML/CSS</span><span>SQL</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+          <h3>Databases</h3>
+          <div class="skill-tags">
+            <span>Oracle</span><span>PostgreSQL</span><span>MySQL</span><span>Snowflake</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fa-solid fa-cloud"></i></div>
+          <h3>Cloud</h3>
+          <div class="skill-tags">
+            <span>Azure</span><span>AWS</span><span>Google Cloud</span><span>Kubernetes</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fa-solid fa-gears"></i></div>
+          <h3>Libraries & Frameworks</h3>
+          <div class="skill-tags">
+            <span>Django</span><span>Apache Spark</span><span>Kafka</span><span>Pandas</span><span>Beautiful Soup</span><span>Plotly</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fa-solid fa-rocket"></i></div>
+          <h3>DevOps & Testing</h3>
+          <div class="skill-tags">
+            <span>Git</span><span>Jenkins</span><span>Docker</span><span>Terraform</span><span>Selenium</span><span>JUnit</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fa-solid fa-certificate"></i></div>
+          <h3>Certifications</h3>
+          <div class="skill-tags">
+            <span class="cert">DP-900: Azure Data Fundamentals</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section section-alt">
+    <div class="container">
+      <h2 class="section-heading">Projects</h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-card-header">
+            <i class="fa-solid fa-microphone-lines project-icon"></i>
+            <div class="project-links">
+              <a href="https://github.com/anthonyn5600/audio-speaker-separation" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+          <h3>Audio Speaker Separation</h3>
+          <p>Upload an audio file with multiple people talking, and this Django app uses WhisperX to split it by speaker. Each person gets their own track and transcript.</p>
+          <div class="project-tags">
+            <span>Python</span><span>Django</span><span>WhisperX</span><span>PyTorch</span><span>Docker</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card-header">
+            <i class="fa-solid fa-fish project-icon"></i>
+            <div class="project-links">
+              <a href="https://github.com/anthonyn5600/sushi-restaurant" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://anthonyn5600.github.io/sushi-restaurant/" target="_blank" rel="noopener" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <h3>Sushi Restaurant Game</h3>
+          <p>A browser game where you run a sushi prep station. Customers show up, you drag ingredients to build their orders, and try not to mess up. It's harder than it sounds.</p>
+          <div class="project-tags">
+            <span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>Drag &amp; Drop API</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card-header">
+            <i class="fa-solid fa-route project-icon"></i>
+            <div class="project-links">
+              <a href="https://github.com/anthonyn5600/CampusRenovation" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+          <h3>Campus Navigation</h3>
+          <p>Interactive campus map that finds the shortest path between buildings, pulls in live events via scraping, and shows nearby food spots. Built with Leaflet.</p>
+          <div class="project-tags">
+            <span>JavaScript</span><span>Leaflet.js</span><span>Web Scraping</span><span>Routing</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card-header">
+            <i class="fa-solid fa-images project-icon"></i>
+            <div class="project-links">
+              <a href="https://github.com/anthonyn5600/Image-Searcher" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+          <h3>Image Searcher</h3>
+          <p>Desktop app that hooks into the Flickr API. Type in what you're looking for and it pulls up images in a GUI built with PySimpleGUI.</p>
+          <div class="project-tags">
+            <span>Python</span><span>PySimpleGUI</span><span>Flickr API</span><span>Pillow</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card-header">
+            <i class="fa-solid fa-gamepad project-icon"></i>
+            <div class="project-links">
+              <a href="https://github.com/anthonyn5600/Godot-Project" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+          <h3>Dragon Ball Z Game</h3>
+          <p>2D action game in Godot. Move around, throw beam attacks, deal with collision and physics. Made this because I wanted to try game dev and DBZ seemed like the right fit.</p>
+          <div class="project-tags">
+            <span>GDScript</span><span>Godot Engine</span><span>2D Physics</span><span>Animation</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card-header">
+            <i class="fa-solid fa-music project-icon"></i>
+            <div class="project-links">
+              <a href="https://github.com/anthonyn5600/Virtual-Piano" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+          <h3>Virtual Piano</h3>
+          <p>Press keys on your keyboard, hear piano notes. Simple idea, fun C++ problem. Had to figure out real-time audio output and key mapping.</p>
+          <div class="project-tags">
+            <span>C++</span><span>CMake</span><span>Audio I/O</span><span>Windows</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container contact-container">
+      <h2 class="section-heading">Let's talk</h2>
+      <p class="contact-text">I'm looking for software engineering roles. If you've got something interesting, or just want to chat, reach out.</p>
+      <div class="contact-links">
+        <a href="mailto:anthonyn5600@gmail.com" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> anthonyn5600@gmail.com</a>
+        <a href="tel:+15622935892" class="btn btn-outline"><i class="fa-solid fa-phone"></i> (562) 293-5892</a>
+        <a href="https://github.com/anthonyn5600" target="_blank" rel="noopener" class="btn btn-outline"><i class="fa-brands fa-github"></i> GitHub</a>
+      </div>
+      <p class="location"><i class="fa-solid fa-location-dot"></i> Norwalk, CA</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Built by Anthony Ngon</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
