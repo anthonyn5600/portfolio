@@ -9,7 +9,8 @@ const menuToggle = document.getElementById("menu-toggle");
 const mobileMenu = document.getElementById("mobile-menu");
 
 menuToggle.addEventListener("click", () => {
-  mobileMenu.classList.toggle("hidden");
+  const isHidden = mobileMenu.classList.toggle("hidden");
+  menuToggle.setAttribute("aria-expanded", !isHidden);
 });
 
 mobileMenu.querySelectorAll("a").forEach((link) => {
@@ -18,7 +19,7 @@ mobileMenu.querySelectorAll("a").forEach((link) => {
 
 // Scroll reveal with stagger
 const revealTargets = document.querySelectorAll(
-  ".timeline-card, .skill-card, .project-card, .about-grid, .contact-container"
+  ".timeline-card, .skill-card, .project-card, .about-grid, .contact-container, .metric"
 );
 
 revealTargets.forEach((el) => el.classList.add("reveal"));
@@ -36,7 +37,7 @@ const observer = new IntersectionObserver(
 );
 
 // Stagger cards in each grid so they don't all pop in at once
-document.querySelectorAll(".skills-grid, .projects-grid").forEach((grid) => {
+document.querySelectorAll(".skills-grid, .projects-grid, .metrics-row").forEach((grid) => {
   [...grid.children].forEach((card, i) => {
     card.style.transitionDelay = `${i * 80}ms`;
   });
@@ -44,7 +45,7 @@ document.querySelectorAll(".skills-grid, .projects-grid").forEach((grid) => {
 
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
-// Version toggle (Virtual Piano)
+// Version toggle
 document.querySelectorAll(".version-toggle").forEach((toggle) => {
   toggle.addEventListener("click", (e) => {
     const btn = e.target.closest(".version-btn");
