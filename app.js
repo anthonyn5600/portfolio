@@ -37,13 +37,51 @@ const observer = new IntersectionObserver(
 );
 
 // Stagger cards in each grid so they don't all pop in at once
-document.querySelectorAll(".skills-grid, .projects-grid, .metrics-row").forEach((grid) => {
+document.querySelectorAll(".skills-grid, .featured-grid, .projects-grid, .metrics-row").forEach((grid) => {
   [...grid.children].forEach((card, i) => {
     card.style.transitionDelay = `${i * 80}ms`;
   });
 });
 
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+// Metric count-up: each number rolls up once when the row scrolls into view.
+// The final text is already in the HTML, so no-JS and reduced motion show it as is.
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const metricsRow = document.querySelector(".metrics-row");
+if (metricsRow && !reduceMotion) {
+  const nums = [...metricsRow.querySelectorAll("[data-count]")];
+  const format = (el, v) => {
+    const d = Number(el.dataset.decimals || 0);
+    return `${el.dataset.prefix || ""}${v.toFixed(d)}${el.dataset.suffix || ""}`;
+  };
+  // The numbers keep their final text until the row starts to reveal (while
+  // the cards are still transparent), so crawlers and print see real values
+  const run = () => {
+    nums.forEach((el) => (el.textContent = format(el, 0)));
+    const start = performance.now();
+    const duration = 1400;
+    const tick = (now) => {
+      const t = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - t, 3);
+      nums.forEach((el, i) => {
+        // Stagger to match the cards' reveal delay
+        const local = Math.max(0, Math.min(1, (eased * duration - i * 80) / (duration - i * 80)));
+        el.textContent = format(el, Number(el.dataset.count) * local);
+      });
+      if (t < 1) requestAnimationFrame(tick);
+      else nums.forEach((el) => (el.textContent = format(el, Number(el.dataset.count))));
+    };
+    requestAnimationFrame(tick);
+  };
+  const countObserver = new IntersectionObserver((entries) => {
+    if (entries.some((e) => e.isIntersecting)) {
+      countObserver.disconnect();
+      run();
+    }
+  }, { threshold: 0.08, rootMargin: "0px 0px -30px 0px" });
+  countObserver.observe(metricsRow);
+}
 
 // Version toggle
 document.querySelectorAll(".version-toggle").forEach((toggle) => {

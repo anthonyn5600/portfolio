@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio demos (dev preview)</title>
+  <!-- An empty icon, so the browser doesn't request a missing /favicon.ico -->
+  <link rel="icon" href="data:," />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    html, body { margin: 0; background: #09090b; color: #a8a8b3; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+    main { display: grid; gap: 48px; padding: 32px 24px 64px; } /* 24px sides, as the site container: at 390 a card is 342 wide, its design width */
+    section { display: grid; gap: 10px; justify-items: start; }
+    h2 { margin: 0; font: 500 12px 'JetBrains Mono', monospace; color: #5c5c66; letter-spacing: 0.5px; }
+    .slot { width: 100%; }
+    .card-ground { background: #15151a; border: 1px solid #23232b; border-radius: 10px; overflow: hidden; }
+  </style>
+</head>
+<body>
+  <main id="root"></main>
+  <script type="module" src="/src/dev.tsx"></script>
+</body>
+</html>

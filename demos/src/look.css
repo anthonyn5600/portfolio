@@ -1,0 +1,26 @@
+/* The portfolio's look, mapped onto the kit's tokens (references/looks.md).
+   Every demo stage takes the class `pf`. The site is dark with a gold accent;
+   the illustrations sit directly on the page, a step lighter than it. */
+
+.pf .ss-stage {
+  --ss-font: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ss-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  --ss-accent: #c9a54e;
+  --ss-accent-2: #7b93c1;
+}
+
+.pf .ss-stage[data-theme='dark'] {
+  --ss-well: #09090b;       /* the page, --bg */
+  --ss-canvas: #101014;     /* sidebars and map ground */
+  --ss-surface: #15151a;    /* the site's cards, --surface */
+  --ss-chrome: #1b1b21;     /* window bars, a step lighter again */
+  --ss-raised: #23232b;     /* satellites and popovers */
+  --ss-fill: #2c2c34;
+  --ss-text-strong: #e8e8ed;
+  --ss-text: #a8a8b3;
+  --ss-text-faint: #6b6b76;
+  --ss-icon: #a8a8b3;
+  --ss-icon-faint: #4d4d57;
+  --ss-accent-soft: rgba(201, 165, 78, 0.16);
+  --ss-accent-text: #d9b968;
+}

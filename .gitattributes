@@ -1,0 +1,6 @@
+# Never let line-ending conversion touch binary files (the resume PDF has no
+# NUL bytes, so git would otherwise guess it is text)
+*.pdf binary
+*.jpg binary
+*.jpeg binary
+*.png binary

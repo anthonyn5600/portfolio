@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Anthony Ngon — Software Engineer, Data Platform. 3 years at Optum building ETL pipelines, microservices, and data tools. Open to new roles." />
+  <meta name="description" content="Anthony Ngon — Software Engineer, Data Platform. 3 years at Optum building ETL pipelines, microservices, and data tools on Azure and AWS. Open to new roles." />
   <title>Anthony Ngon | Software Engineer, Data Platform</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
+  <!-- Animated illustrations: built from demos/ with `npm run build` -->
+  <link rel="stylesheet" href="assets/demos/demos.css" />
 </head>
 <body>
   <div class="grain"></div>
@@ -40,6 +43,7 @@
 
   <!-- Hero -->
   <section id="landing">
+    <div class="landing-inner">
     <div class="landing-content">
       <p class="landing-greeting">Hey, I'm</p>
       <h1 class="landing-name">Anthony Ngon</h1>
@@ -56,6 +60,11 @@
         <a href="mailto:anthonyn5600@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
       </div>
     </div>
+    <!-- Animated illustration (demos/src/pipeline). Generic and invented: no employer branding or real data. -->
+    <div class="landing-demo">
+      <div class="demo-slot demo-slot--hero" data-demo="pipeline" role="img" aria-label="Illustration: a claims data pipeline run lands in a runs list, processes 52,318 rows and goes from Running to Succeeded in 14 minutes."></div>
+    </div>
+    </div>
     <div class="scroll-indicator">
       <div class="mouse"><div class="wheel"></div></div>
     </div>
@@ -67,7 +76,7 @@
       <h2 class="section-heading"><span class="section-num">01</span>About</h2>
       <div class="about-grid">
         <div class="about-text">
-          <p>After finishing my CS degree at Cal State Fullerton, I spent 3 years at <strong>Optum</strong> as a Software Engineer on the Data Platform team &mdash; writing Python and SQL daily, designing ETL pipelines that processed 50K+ healthcare records, and building microservices with 99.9% uptime.</p>
+          <p>After finishing my CS degree at Cal State Fullerton, I spent 3 years at <strong>Optum</strong> as a Software Engineer on the Data Platform team &mdash; writing Python and SQL daily, designing ETL pipelines that processed 50K+ healthcare records a day, building microservices on Azure with 99.9% uptime, and moving batch exports onto event-driven AWS pipelines.</p>
           <p>Along the way I realized I wanted to build the products themselves. Now I make things like 3D city simulation engines, AI-powered audio tools, and campus navigation apps. I care about clean architecture, real performance, and shipping things that work.</p>
           <p><strong>B.S. in Computer Science</strong> &mdash; Cal State Fullerton, 2022<br/><strong>DP-900</strong> &mdash; Microsoft Azure Data Fundamentals</p>
         </div>
@@ -101,10 +110,12 @@
       <h2 class="section-heading"><span class="section-num">02</span>Experience</h2>
 
       <div class="metrics-row">
-        <div class="metric"><span class="metric-num">50K+</span><span class="metric-desc">daily records</span></div>
-        <div class="metric"><span class="metric-num">99.9%</span><span class="metric-desc">uptime</span></div>
-        <div class="metric"><span class="metric-num">40%</span><span class="metric-desc">less manual work</span></div>
-        <div class="metric"><span class="metric-num">30%</span><span class="metric-desc">fewer incidents</span></div>
+        <div class="metric"><span class="metric-num" data-count="50" data-suffix="K+">50K+</span><span class="metric-desc">daily records</span></div>
+        <div class="metric"><span class="metric-num" data-count="99.9" data-decimals="1" data-suffix="%">99.9%</span><span class="metric-desc">uptime</span></div>
+        <div class="metric"><span class="metric-num" data-count="40" data-suffix="%">40%</span><span class="metric-desc">less manual work</span></div>
+        <div class="metric"><span class="metric-num" data-count="30" data-suffix="%">30%</span><span class="metric-desc">fewer incidents</span></div>
+        <div class="metric"><span class="metric-num" data-count="35" data-suffix="%">35%</span><span class="metric-desc">faster delivery</span></div>
+        <div class="metric"><span class="metric-num" data-count="10" data-prefix="&lt;" data-suffix=" min">&lt;10 min</span><span class="metric-desc">to detect issues</span></div>
       </div>
 
       <div class="timeline">
@@ -124,10 +135,12 @@
               <li>Architected <strong>CI/CD pipelines</strong> with Jenkins, Docker, and Terraform, reducing release cycles from weekly to daily and cutting production incidents by <em>30%</em></li>
               <li>Engineered a shared <strong>Python utility library</strong> adopted by 4 engineering teams (~20 developers), reducing duplicated code by <em>25%</em></li>
               <li>Orchestrated <em>10+ data workflows</em> in <strong>Databricks</strong> and <strong>Azure Data Factory</strong> spanning both batch and real-time streaming pipelines, processing Medicare claims and enrollment data on <strong>Kubernetes</strong> to meet daily SLA windows during peak enrollment periods</li>
-              <li>Mentored <strong>3 junior engineers</strong> through code reviews and pair programming, reducing onboarding time from <em>8 weeks to 4</em></li>
+              <li>Stood up <strong>AWS infrastructure</strong> using EC2, S3, and Lambda for cross-cloud data transfer jobs, migrating legacy batch exports to event-driven pipelines that cut delivery time by <em>35%</em> and eliminated manual file handoffs between teams</li>
+              <li>Set up <strong>CloudWatch alarms</strong> for anomaly detection across AWS-hosted jobs, reducing mean time to detection on data issues from hours to <em>under 10 minutes</em></li>
+              <li>Mentored <strong>3 junior engineers</strong> through code reviews, pair programming, and writing onboarding documentation that became the team's standard reference for new hires</li>
             </ul>
             <div class="timeline-tags">
-              <span>PySpark</span><span>Python</span><span>SQL</span><span>Azure</span><span>Databricks</span><span>Jenkins</span><span>Docker</span><span>Terraform</span><span>Kubernetes</span>
+              <span>PySpark</span><span>Python</span><span>SQL</span><span>Azure</span><span>AWS</span><span>Lambda</span><span>CloudWatch</span><span>Databricks</span><span>Jenkins</span><span>Docker</span><span>Terraform</span><span>Kubernetes</span>
             </div>
           </div>
         </div>
@@ -169,7 +182,7 @@
           <div class="skill-icon"><i class="fa-solid fa-cloud"></i></div>
           <h3>Cloud &amp; Infrastructure</h3>
           <div class="skill-tags">
-            <span>AWS</span><span>Azure</span><span>Google Cloud</span><span>Kubernetes</span><span>Docker</span><span>Terraform</span>
+            <span>AWS (EC2, S3, Lambda, RDS, CloudWatch)</span><span>Azure</span><span>Google Cloud</span><span>Kubernetes</span><span>Docker</span><span>Terraform</span>
           </div>
         </div>
 
@@ -197,22 +210,68 @@
   <section id="projects" class="section section-alt">
     <div class="container">
       <h2 class="section-heading"><span class="section-num">04</span>Projects</h2>
-      <div class="projects-grid">
 
-        <div class="project-card" data-repo="streets-alive">
-          <div class="project-card-header">
-            <i class="fa-solid fa-city project-icon"></i>
-            <div class="project-links">
-              <a href="https://github.com/anthonyn5600/streets-alive" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <div class="featured-grid">
+
+        <article class="project-card featured-card" id="streets-alive" data-repo="streets-alive">
+          <div class="featured-media">
+            <img src="assets/projects/streets-alive.jpg" width="1200" height="750" loading="lazy" alt="Streets Alive rendering downtown Los Angeles in 3D: extruded towers, the street grid and a freeway interchange, with the simulation's layers, drivers and households panel on the left." />
+          </div>
+          <div class="featured-body">
+            <div class="project-card-header">
+              <i class="fa-solid fa-city project-icon"></i>
+              <div class="project-links">
+                <a href="https://github.com/anthonyn5600/streets-alive" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            <h3>Streets Alive</h3>
+            <p>Real-time 3D city engine that decodes OpenStreetMap vector tiles into extruded buildings, multi-lane roads, and highway elevation tiers for LA, with a life simulation of households and A*-routed traffic. Holds 60fps with unified GPU buffers, LRU + IndexedDB geometry caching, and a Web Worker pool for tile decoding.</p>
+            <span class="project-date"></span>
+            <div class="project-tags">
+              <span>Three.js</span><span>React</span><span>TypeScript</span><span>Vite</span><span>Web Workers</span>
             </div>
           </div>
-          <h3>Streets Alive</h3>
-          <p>Real-time 3D city engine built on OpenStreetMap data. Renders extruded buildings, multi-lane roads, and highway elevation tiers for LA. Includes life simulation with population modeling and A*-routed traffic.</p>
-          <span class="project-date"></span>
-          <div class="project-tags">
-            <span>Three.js</span><span>React</span><span>TypeScript</span><span>Vite</span>
+        </article>
+
+        <article class="project-card featured-card" id="campus-navigator">
+          <div class="featured-media">
+            <!-- Animated illustration (demos/src/campus) -->
+            <div class="demo-slot demo-slot--card" data-demo="campus" role="img" aria-label="Illustration: searching the campus map for Pollak Library North draws a 4 minute walking route from your location."></div>
           </div>
-        </div>
+          <div class="featured-body">
+            <div class="project-card-header">
+              <i class="fa-solid fa-route project-icon"></i>
+              <div class="project-links">
+                <a href="https://github.com/anthonyn5600/campus-renovation" target="_blank" rel="noopener" aria-label="GitHub" data-v="v2"><i class="fa-brands fa-github"></i></a>
+                <a href="https://github.com/anthonyn5600/CampusRenovation" target="_blank" rel="noopener" aria-label="GitHub" data-v="v1" hidden><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            <div class="version-toggle">
+              <button class="version-btn active" data-v="v2">v2</button>
+              <button class="version-btn" data-v="v1">v1</button>
+            </div>
+            <h3>CSUF Campus Navigator</h3>
+            <div class="version-content active" data-v="v2" data-repo="campus-renovation">
+              <p>Ground-up rebuild in Next.js of my original vanilla JS app: an interactive Leaflet map of 63 Cal State Fullerton buildings, searchable directories, and live event discovery. Data-driven components cut the marker code from 360 lines to ~30, and routes are calculated in the browser with the haversine formula, so it needs zero API keys.</p>
+              <span class="project-date"></span>
+              <div class="project-tags">
+                <span>Next.js</span><span>TypeScript</span><span>React</span><span>Tailwind</span><span>Leaflet</span>
+              </div>
+            </div>
+            <div class="version-content" data-v="v1" data-repo="CampusRenovation">
+              <p>The original: an interactive campus map with shortest-path routing between buildings, live event scraping, and nearby food spots. Built with Leaflet.</p>
+              <span class="project-date"></span>
+              <div class="project-tags">
+                <span>JavaScript</span><span>Leaflet.js</span><span>Web Scraping</span><span>Routing</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <h3 class="subsection-heading">More projects</h3>
+      <div class="projects-grid">
 
         <div class="project-card" data-repo="audio-speaker-separation">
           <div class="project-card-header">
@@ -242,35 +301,6 @@
           <span class="project-date"></span>
           <div class="project-tags">
             <span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>Drag &amp; Drop API</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-card-header">
-            <i class="fa-solid fa-route project-icon"></i>
-            <div class="project-links">
-              <a href="https://github.com/anthonyn5600/campus-renovation" target="_blank" rel="noopener" aria-label="GitHub" data-v="v2"><i class="fa-brands fa-github"></i></a>
-              <a href="https://github.com/anthonyn5600/CampusRenovation" target="_blank" rel="noopener" aria-label="GitHub" data-v="v1" hidden><i class="fa-brands fa-github"></i></a>
-            </div>
-          </div>
-          <div class="version-toggle">
-            <button class="version-btn active" data-v="v2">v2</button>
-            <button class="version-btn" data-v="v1">v1</button>
-          </div>
-          <h3>Campus Navigation</h3>
-          <div class="version-content active" data-v="v2" data-repo="campus-renovation">
-            <p>Ground-up rebuild of the original. Interactive map with 63 buildings, live CSUF events feed, food and contact directories. Zero API keys required.</p>
-            <span class="project-date"></span>
-            <div class="project-tags">
-              <span>TypeScript</span><span>Next.js</span><span>React</span><span>Leaflet</span><span>Tailwind</span>
-            </div>
-          </div>
-          <div class="version-content" data-v="v1" data-repo="CampusRenovation">
-            <p>Interactive campus map with shortest-path routing between buildings, live event scraping, and nearby food spots. Built with Leaflet.</p>
-            <span class="project-date"></span>
-            <div class="project-tags">
-              <span>JavaScript</span><span>Leaflet.js</span><span>Web Scraping</span><span>Routing</span>
-            </div>
           </div>
         </div>
 
@@ -357,5 +387,6 @@
   </footer>
 
   <script src="app.js"></script>
+  <script src="assets/demos/demos.js" defer></script>
 </body>
 </html>

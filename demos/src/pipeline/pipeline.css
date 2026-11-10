@@ -1,0 +1,252 @@
+/* Pipeline hero. Everything nested under .ph so nothing leaks into the page. */
+
+.ph .ss-stage {
+  overflow: hidden;
+  background: transparent;
+}
+
+/* Fade crop: the window is inset at the top and both sides and sinks into
+   the page at its foot. The mask sits on a wrapper with room around the
+   window, so the window keeps its edge and shadow on the top and sides. */
+.ph .ph-mask {
+  position: absolute;
+  inset: 0;
+  padding: 24px 24px 0;
+  -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent 97%);
+  mask-image: linear-gradient(to bottom, #000 60%, transparent 97%);
+}
+
+.ph .ss-stage[data-layout='compact'] .ph-mask {
+  padding: 20px 16px 0;
+}
+
+.ph .ph-win {
+  width: 100%;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.06), 0 0 0 1px rgb(255 255 255 / 0.07);
+}
+
+.ph .ph-side {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  padding: 14px 10px;
+}
+
+.ph .ph-nav {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  height: 28px;
+  padding: 0 9px;
+  border-radius: var(--ss-radius-sm);
+}
+
+.ph .ph-nav[data-active] {
+  background: var(--ss-ink-1);
+}
+
+/* 24px sides: the title starts exactly under the address pill's edge */
+.ph .ph-body {
+  min-height: 440px;
+  padding: 20px 24px 0;
+  background: var(--ss-surface);
+}
+
+.ph .ss-stage[data-layout='compact'] .ph-body {
+  padding: 18px 16px 0;
+}
+
+.ph .ph-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.ph .ph-title {
+  color: var(--ss-text-strong);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.ph .ph-env {
+  padding: 2px 8px;
+  border: 1px solid var(--ss-line);
+  border-radius: var(--ss-radius-pill);
+  color: var(--ss-text);
+  font-family: var(--ss-mono);
+  font-size: 10.5px;
+  line-height: 1.3;
+}
+
+.ph .ph-list {
+  border-top: 1px solid var(--ss-line-faint);
+}
+
+.ph .ph-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 80px 96px 56px;
+  align-items: center;
+  gap: 12px;
+  height: 60px;
+  border-bottom: 1px solid var(--ss-line-faint);
+  white-space: nowrap;
+}
+
+/* Compact: the row count gives way; name, status and time stay whole */
+.ph .ss-stage[data-layout='compact'] .ph-row {
+  grid-template-columns: minmax(0, 1fr) 96px 54px;
+  gap: 10px;
+}
+
+.ph .ss-stage[data-layout='compact'] .ph-rows,
+.ph .ss-stage[data-layout='compact'] .ph-row--filler > .ph-fill-rows {
+  display: none;
+}
+
+.ph .ph-rows {
+  display: flex;
+  justify-content: flex-end;
+  color: var(--ss-text);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* The rolling values sit in boxes already as wide as their longest value
+   ("52,318 rows", "14m 08s"), right-aligned. The Roll's own box eases inside
+   that room, so the column's edges never move: before, the first frame of
+   that ease pushed the row count's left edge 2px at once, a hop after the
+   row had settled. */
+.ph .ph-rows .ss-roll,
+.ph .ph-time .ss-roll {
+  display: inline-block;
+  text-align: right;
+}
+
+.ph .ph-rows .ss-roll {
+  min-width: 5.8em;
+}
+
+.ph .ph-time .ss-roll {
+  min-width: 4em;
+}
+
+.ph .ph-lines {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 6px;
+  min-width: 0;
+}
+
+.ph .ph-name {
+  overflow: hidden;
+  color: var(--ss-text-strong);
+  font-family: var(--ss-mono);
+  font-size: 12.5px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+}
+
+.ph .ph-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 16px;
+  color: var(--ss-text);
+  font-size: 12px;
+}
+
+/* 12px icons in a 16px line: whole pixels, no half-pixel hop as rows move */
+.ph .ph-meta__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.ph .ph-meta svg {
+  flex: none;
+  color: var(--ss-icon-faint);
+}
+
+/* Compact: the trigger gives way, the row count stays */
+.ph .ss-stage[data-layout='compact'] .ph-meta__trigger {
+  display: none;
+}
+
+.ph .ph-badge {
+  justify-self: start;
+}
+
+/* The older run's Succeeded is quiet, so the new one leads */
+.ph .ph-badge--old {
+  color: var(--ss-text);
+}
+
+.ph .ph-time {
+  justify-self: end;
+  color: var(--ss-text);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.ph .ph-row[data-lead] .ph-time {
+  color: var(--ss-text-strong);
+}
+
+.ph .ph-row--filler > .ss-bar:last-child,
+.ph .ph-row--filler > .ph-fill-rows {
+  justify-self: end;
+}
+
+.ph .ph-lines .ss-bar {
+  max-width: 100%;
+}
+
+.ph .ph-mark {
+  display: grid;
+  place-items: center;
+  width: 8px;
+  height: 8px;
+}
+
+.ph .ph-mark > * {
+  grid-area: 1 / 1;
+  transition: opacity 0.2s ease;
+}
+
+.ph .ph-mark[data-done] .ss-spinner,
+.ph .ph-mark:not([data-done]) .ph-dot {
+  opacity: 0;
+}
+
+.ph .ph-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* The arc turns inside the spinner, not the spinner's box. Rotating the
+   whole svg swings its corners out past the 8px cell (a 10.8px box at 45°),
+   so the pill's left inset breathed between 5 and 7px while it spun; now the
+   box holds still and the inset matches the dot's in the Succeeded state. */
+.ph .ph-mark .ss-spinner {
+  animation: none;
+}
+
+.ph .ph-mark .ss-spinner path {
+  transform-box: view-box;
+  transform-origin: 50% 50%;
+  animation: ph-spin 0.8s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ph .ph-mark .ss-spinner path {
+    animation: none;
+  }
+}
+
+@keyframes ph-spin {
+  to { transform: rotate(1turn); }
+}

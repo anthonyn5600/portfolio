@@ -121,7 +121,48 @@ a:hover { color: var(--white); }
 }
 
 
+/* Copy over the illustration on narrow screens; side by side from 1180px */
+.landing-inner {
+  width: 100%; max-width: 640px;
+  display: grid; grid-template-columns: minmax(0, 1fr);
+  gap: 48px; align-items: center;
+}
 .landing-content { position: relative; max-width: 640px; }
+
+/* Fades in without moving: the illustration measures itself as it mounts */
+.landing-demo {
+  width: 100%; max-width: 620px;
+  opacity: 0; animation: fadeIn 0.8s 1s forwards;
+}
+
+@media (min-width: 1180px) {
+  .landing-inner {
+    max-width: 1180px;
+    grid-template-columns: minmax(0, 500px) minmax(0, 620px);
+    justify-content: space-between;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-demo { animation: none; opacity: 1; }
+}
+
+/* ── Demo slots ──
+   Each holds an animated illustration from demos/. The slot reserves the
+   illustration's shape before its script runs, so nothing below it moves
+   when it mounts; without JS it stays an empty space of the same size. */
+.demo-slot { width: 100%; }
+.demo-slot--hero { aspect-ratio: 620 / 400; }
+.demo-slot--card { aspect-ratio: 448 / 272; }
+.demo-slot.is-live { aspect-ratio: auto; }
+
+/* Below these widths the demos switch to their phone designs */
+@media (max-width: 607px) {
+  .demo-slot--hero { aspect-ratio: 358 / 280; }
+}
+@media (max-width: 467px) {
+  .demo-slot--card { aspect-ratio: 342 / 260; }
+}
 
 .landing-greeting {
   color: var(--accent); font-family: var(--mono); font-size: 15px;
@@ -266,7 +307,7 @@ a:hover { color: var(--white); }
 
 /* ── Metrics ── */
 .metrics-row {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
   margin-bottom: 32px;
 }
 .metric {
@@ -284,7 +325,7 @@ a:hover { color: var(--white); }
 .metric-num {
   display: block; font-family: var(--mono); font-size: 22px;
   font-weight: 500; color: var(--accent); letter-spacing: -0.5px;
-  margin-bottom: 2px;
+  margin-bottom: 2px; font-variant-numeric: tabular-nums;
 }
 .metric-desc {
   font-size: 12px; color: var(--text-dim); text-transform: uppercase;
@@ -381,6 +422,40 @@ a:hover { color: var(--white); }
 }
 
 /* ── Projects ── */
+
+/* Featured: the two projects on the resume, each with a picture */
+.featured-grid {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px;
+  margin-bottom: 48px;
+}
+.project-card.featured-card { padding: 0; overflow: hidden; }
+.featured-media {
+  background: #101014;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  /* A lasting layer: the card slides in (scroll reveal) and lifts on hover,
+     and the illustration inside rides along as one image instead of its
+     words re-snapping to whole pixels on every frame of the move */
+  will-change: transform;
+}
+.featured-media img {
+  display: block; width: 100%; height: auto;
+  aspect-ratio: 448 / 272; object-fit: cover; object-position: 62% 45%;
+}
+.featured-body {
+  display: flex; flex-direction: column; flex: 1;
+  padding: 24px;
+}
+@media (max-width: 467px) {
+  .featured-media img { aspect-ratio: 342 / 260; }
+}
+
+.subsection-heading {
+  font-family: var(--mono); font-size: 13px; font-weight: 400;
+  color: var(--text-dim); letter-spacing: 1px; text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
 .projects-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
 }
@@ -493,6 +568,10 @@ footer {
   from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
 @keyframes scroll {
   0%   { opacity: 1; transform: translate(-50%, 0); }
   100% { opacity: 0; transform: translate(-50%, 14px); }
@@ -514,6 +593,7 @@ footer {
   .about-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
+  .featured-grid { grid-template-columns: 1fr; }
   .metrics-row { grid-template-columns: repeat(2, 1fr); }
 
   .timeline-header { flex-direction: column; }
